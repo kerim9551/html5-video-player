@@ -59,5 +59,5 @@ mute.addEventListener('click', () => {
 
 //fullscreen
 fullscreen.addEventListener('click', () => {
-	video.requestFullscreen();
+	videoPlayer.requestFullscreen();
 })

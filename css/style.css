@@ -137,4 +137,5 @@ input[type="range"]::-webkit-slider-thumb {
 	background: transparent;
 	color: #fff;
 	border: none;
+	cursor: pointer;
 }
