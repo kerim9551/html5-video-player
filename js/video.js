@@ -4,6 +4,8 @@ const playButton = videoPlayer.querySelector('.play-button')
 const volume = videoPlayer.querySelector('.volume')
 const currentTimeElement = videoPlayer.querySelector('.current')
 const durationTimeElement = videoPlayer.querySelector('.duration')
+const progress = videoPlayer.querySelector('.video-progress')
+const progressBar = videoPlayer.querySelector('.video-progress-filled')
 
 
 //playpause
@@ -34,3 +36,15 @@ const currentTime = () => {
 }
 
 video.addEventListener('timeupdate', currentTime)
+
+//progress
+video.addEventListener('timeupdate', () => {
+	const percentage = (video.currentTime / video.duration) * 100
+	progressBar.style.width = `${percentage}%`
+})
+
+//change progress on click
+progress.addEventListener('click', (e) => {
+	const progressTime = (e.offsetX / progress.offsetWidth) * video.duration
+	video.currentTime = progressTime
+})
