@@ -7,6 +7,7 @@ const durationTimeElement = videoPlayer.querySelector('.duration')
 const progress = videoPlayer.querySelector('.video-progress')
 const progressBar = videoPlayer.querySelector('.video-progress-filled')
 const mute = videoPlayer.querySelector('.mute')
+const fullscreen = videoPlayer.querySelector('.fullscreen')
 
 
 //playpause
@@ -54,4 +55,9 @@ progress.addEventListener('click', (e) => {
 mute.addEventListener('click', () => {
 	video.muted = !video.muted;
 	mute.classList.toggle('muted')
+})
+
+//fullscreen
+fullscreen.addEventListener('click', () => {
+	video.requestFullscreen();
 })
