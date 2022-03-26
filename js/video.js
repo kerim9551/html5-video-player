@@ -6,6 +6,7 @@ const currentTimeElement = videoPlayer.querySelector('.current')
 const durationTimeElement = videoPlayer.querySelector('.duration')
 const progress = videoPlayer.querySelector('.video-progress')
 const progressBar = videoPlayer.querySelector('.video-progress-filled')
+const mute = videoPlayer.querySelector('.mute')
 
 
 //playpause
@@ -47,4 +48,10 @@ video.addEventListener('timeupdate', () => {
 progress.addEventListener('click', (e) => {
 	const progressTime = (e.offsetX / progress.offsetWidth) * video.duration
 	video.currentTime = progressTime
+})
+
+//mute
+mute.addEventListener('click', () => {
+	video.muted = !video.muted;
+	mute.classList.toggle('muted')
 })
